@@ -1,0 +1,63 @@
+const path = require("path");
+const { execSync } = require("child_process");
+const { ncp } = require("ncp");
+const { writeFile, mkdir } = require("fs").promises;
+const { existsSync } = require("fs");
+const chalk = require('chalk');
+
+const copyProjectFiles = (config, destination) => {
+  const prjFolder = `../templates/${config.template}`;
+  const source = path.join(__dirname, prjFolder);
+  return new Promise((resolve, reject) => {
+    ncp.limit = 16;
+    ncp(source, destination, { stopOnErr: true }, (err) => {
+      if (err) {
+        reject(err);
+      }
+      resolve();
+    });
+  });
+};
+
+const updatePackageJson = async (destination, main) => {
+  try {
+    const pathName = `${destination}/package.json`;
+    let data = require(pathName);
+
+    data.main = main;
+    data.name = path.basename(destination);
+    data = JSON.stringify(data, null, 2);
+
+    await writeFile(pathName, data);
+  } catch (err) {
+    throw err;
+  }
+};
+
+const downloadNodeModules = (config, destination) => {
+  const options = { cwd: destination };
+
+  console.log(chalk.bold.white("\nInstalling dependencies..."));
+  execSync(`npm i -s ${config.dependencies}`, options);
+  console.log(chalk.bold.greenBright("Dependencies installation done...\n"));
+
+  console.log(chalk.bold.white("Installing dev dependencies..."));
+  execSync(`npm i -D ${config.devDependencies}`, options);
+  console.log(chalk.bold.greenBright("Dependencies installation complete...\n")
+  );
+};
+
+const generate = async (config, destination, main) => {
+  try {
+    if (!existsSync(destination)) {
+      await mkdir(destination, { recursive: true });
+    }
+    await copyProjectFiles(config, destination);
+    await updatePackageJson(destination, main);
+    downloadNodeModules(config, destination);
+  } catch (err) {
+    throw err;
+  }
+};
+
+module.exports = generate;

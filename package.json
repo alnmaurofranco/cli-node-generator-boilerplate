@@ -1,0 +1,35 @@
+{
+  "name": "nodejs-generator",
+  "version": "1.0.0",
+  "description": "A CLI help generate a new express server boilerplate with Javascript or Typescript.",
+  "main": "bin/nodejs-generator.js",
+  "bin": "bin/nodejs-generator.js",
+  "scripts": {
+    "dev": "node src/lib/cli.js",
+    "lint": "eslint src/"
+  },
+  "author": "alnmaurofranco",
+  "keywords": [
+    "nodejs",
+    "javascript",
+    "express",
+    "typescript",
+    "koa",
+    "api",
+    "boilerplate",
+    "generator"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "cfonts": "^2.9.1",
+    "chalk": "^4.1.0",
+    "ncp": "^2.0.0",
+    "prompts": "^2.4.1"
+  },
+  "devDependencies": {
+    "@types/prompts": "^2.0.10",
+    "eslint": "^7.23.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}
