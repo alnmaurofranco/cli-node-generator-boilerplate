@@ -38,8 +38,18 @@ const updatePackageJson = async (destination, main) => {
   }
 };
 
-const downloadNodeModules = (config, destination) => {
+const downloadNodeModules = (config, destination, engine) => {
   const options = { cwd: destination };
+
+  if (engine === 'yarn') {
+    console.log(chalk.bold.white("\nInstalling dependencies..."));
+    execSync(`yarn add ${config.dependencies}`, options);
+    console.log(chalk.bold.greenBright("Dependencies installation done...\n"));
+
+    console.log(chalk.bold.white("Installing dev dependencies..."));
+    execSync(`yarn add -D ${config.devDependencies}`, options);
+    console.log(chalk.bold.greenBright("Dependencies installation complete...\n"));
+  }
 
   console.log(chalk.bold.white("\nInstalling dependencies..."));
   execSync(`npm i -s ${config.dependencies}`, options);
@@ -47,18 +57,17 @@ const downloadNodeModules = (config, destination) => {
 
   console.log(chalk.bold.white("Installing dev dependencies..."));
   execSync(`npm i -D ${config.devDependencies}`, options);
-  console.log(chalk.bold.greenBright("Dependencies installation complete...\n")
-  );
+  console.log(chalk.bold.greenBright("Dependencies installation complete...\n"));
 };
 
-const generate = async (config, destination, main) => {
+const generate = async (config, destination, main, engine) => {
   try {
     if (!existsSync(destination)) {
       await mkdir(destination, { recursive: true });
     }
     await copyProjectFiles(config, destination);
     await updatePackageJson(destination, main);
-    downloadNodeModules(config, destination);
+    downloadNodeModules(config, destination, engine);
   } catch (err) {
     throw err;
   }

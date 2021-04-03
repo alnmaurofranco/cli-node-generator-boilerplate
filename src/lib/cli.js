@@ -7,11 +7,6 @@ const options = require('../options');
 const chalk = require('chalk')
 const { say } = require('cfonts')
 
-const engineOptions = [
-  { name: 'npm' },
-  { name: 'yarn' },
-];
-
 say('GNB CLI!', {
 	font: 'block',
 	align: 'center',
@@ -39,7 +34,7 @@ const initialization = async (option, projectName, main, engine) => {
       projectName || option.template
     }`;
 
-    await generate(option, destination, main);
+    await generate(option, destination, main, engine);
     console.log(chalk.bold.greenBright(`✅ Project setup complete! at ${destination}`));
 
     console.log(chalk.bold.white(`\n⏩ cd ${destination}`))

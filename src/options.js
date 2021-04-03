@@ -17,8 +17,8 @@ const options = [
   {
     template: "node-koa-js",
     description: "Server with KoaJS + Javascript",
-    dependencies: "",
-    devDependencies: "",
+    dependencies: "koa",
+    devDependencies: "nodemon",
   },
   {
     template: "node-koa-ts",
