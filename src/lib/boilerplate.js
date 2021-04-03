@@ -3,9 +3,9 @@ const { execSync } = require("child_process");
 const { ncp } = require("ncp");
 const { writeFile, mkdir } = require("fs").promises;
 const { existsSync } = require("fs");
-const chalk = require('chalk');
+const chalk = require("chalk");
 
-const boilerplatesVersion = '1.0.0';
+const boilerplatesVersion = "1.0.0";
 
 const copyProjectFiles = (config, destination) => {
   const prjFolder = `../templates/${config.template}`;
@@ -21,13 +21,12 @@ const copyProjectFiles = (config, destination) => {
   });
 };
 
-
 const updatePackageJson = async (destination, main) => {
   try {
     const pathName = `${destination}/package.json`;
     let data = require(pathName);
 
-    data.version = boilerplatesVersion
+    data.version = boilerplatesVersion;
     data.main = main;
     data.name = path.basename(destination);
     data = JSON.stringify(data, null, 2);
@@ -41,23 +40,27 @@ const updatePackageJson = async (destination, main) => {
 const downloadNodeModules = (config, destination, engine) => {
   const options = { cwd: destination };
 
-  if (engine === 'yarn') {
+  if (engine === "yarn") {
     console.log(chalk.bold.white("\nInstalling dependencies..."));
     execSync(`yarn add ${config.dependencies}`, options);
     console.log(chalk.bold.greenBright("Dependencies installation done...\n"));
 
     console.log(chalk.bold.white("Installing dev dependencies..."));
     execSync(`yarn add -D ${config.devDependencies}`, options);
-    console.log(chalk.bold.greenBright("Dependencies installation complete...\n"));
+    console.log(
+      chalk.bold.greenBright("Dependencies installation complete...\n")
+    );
+  } else {
+    console.log(chalk.bold.white("\nInstalling dependencies..."));
+    execSync(`npm i -s ${config.dependencies}`, options);
+    console.log(chalk.bold.greenBright("Dependencies installation done...\n"));
+
+    console.log(chalk.bold.white("Installing dev dependencies..."));
+    execSync(`npm i -D ${config.devDependencies}`, options);
+    console.log(
+      chalk.bold.greenBright("Dependencies installation complete...\n")
+    );
   }
-
-  console.log(chalk.bold.white("\nInstalling dependencies..."));
-  execSync(`npm i -s ${config.dependencies}`, options);
-  console.log(chalk.bold.greenBright("Dependencies installation done...\n"));
-
-  console.log(chalk.bold.white("Installing dev dependencies..."));
-  execSync(`npm i -D ${config.devDependencies}`, options);
-  console.log(chalk.bold.greenBright("Dependencies installation complete...\n"));
 };
 
 const generate = async (config, destination, main, engine) => {

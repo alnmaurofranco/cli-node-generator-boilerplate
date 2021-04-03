@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="NodeJS Generator Boilerplate" title="d" src="" width="220px" />
+  <img alt="NodeJS Generator Boilerplate" title="d" src=".github/logo@.png" width="380px" />
 </h1>
 
 <p align="center">
@@ -18,24 +18,50 @@
 
 <br>
 
+## **✅ Demonstração**
+
 <p align="center">
-  <img alt="node generator boilerplate" src=".github/" width="100%">
+  <img alt="node generator boilerplate" src=".github/gnb.png" width="100%">
 </p>
 
-## 🚀 Tecnologias
+## **✅ Features**
+
+Algumas funcionalidades já presentes no projeto.
+
+- [] Templates
+  - [x] Express + Javascript
+  - [x] Express + Typescript
+  - [x] Koa + Javascript
+  - [] Koa + Typescript
+- [] Padrões de Projeto
+  - [] MVC
+  - [] DDD
+
+## **🚀 Tecnologias**
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - Node.js
 - Prompts
+- CFonts
+- Javascript
 
-## 💻 Projeto
+## **💻 Projeto**
 
-## ✨ Como usar
+GNB (Generator NodeJS Boilerplates) foi criado para automatizar a tarefa de criar um template de node tudo do zero.
 
-## 📦 Rodando o projeto
+## **✨ Como usar**
 
-## :memo: Licença
+Para começar a usar você deve instalar o pacote com o comando
+**`npm install node-generator-boilerplate` ou `yarn add node-generator-boilerplate`**
+
+Logo após de instalar o pacote você utiliza: **`node-generator-boilerplate`**
+
+## **📦 Rodando o projeto**
+
+Para executar o projeto, será necessário instalar [Node.js](https://nodejs.org/) ou ter ele instalado.
+
+## **:memo: Licença**
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](.github/LICENSE.md) para mais detalhes.
 

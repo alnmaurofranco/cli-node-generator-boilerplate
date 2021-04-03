@@ -22,6 +22,14 @@ say('GNB CLI!', {
 	env: 'node'
 });
 
+say('BY ALN', {
+	font: 'tiny',
+	align: 'center',
+	colors: ['white'],
+	background: 'transparent',
+	env: 'node'
+});
+
 const onCancel = () => {
   console.log(chalk.bold.redBright("🚨❌ Project creation failed! 🚨❌"));
 };
