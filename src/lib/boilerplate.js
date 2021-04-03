@@ -5,6 +5,8 @@ const { writeFile, mkdir } = require("fs").promises;
 const { existsSync } = require("fs");
 const chalk = require('chalk');
 
+const boilerplatesVersion = '1.0.0';
+
 const copyProjectFiles = (config, destination) => {
   const prjFolder = `../templates/${config.template}`;
   const source = path.join(__dirname, prjFolder);
@@ -19,11 +21,13 @@ const copyProjectFiles = (config, destination) => {
   });
 };
 
+
 const updatePackageJson = async (destination, main) => {
   try {
     const pathName = `${destination}/package.json`;
     let data = require(pathName);
 
+    data.version = boilerplatesVersion
     data.main = main;
     data.name = path.basename(destination);
     data = JSON.stringify(data, null, 2);

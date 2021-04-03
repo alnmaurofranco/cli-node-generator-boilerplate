@@ -7,6 +7,11 @@ const options = require('../options');
 const chalk = require('chalk')
 const { say } = require('cfonts')
 
+const engineOptions = [
+  { name: 'npm' },
+  { name: 'yarn' },
+];
+
 say('GNB CLI!', {
 	font: 'block',
 	align: 'center',
@@ -26,7 +31,7 @@ const onCancel = () => {
   console.log(chalk.bold.redBright("🚨❌ Project creation failed! 🚨❌"));
 };
 
-const initialization = async (option, projectName, engine) => {
+const initialization = async (option, projectName, main, engine) => {
   try {
     const start = new Date;
 
@@ -34,11 +39,11 @@ const initialization = async (option, projectName, engine) => {
       projectName || option.template
     }`;
 
-    await generate(option, destination);
+    await generate(option, destination, main);
     console.log(chalk.bold.greenBright(`✅ Project setup complete! at ${destination}`));
 
-    console.log(`cd ${destination}`)
-    console.log(`${engine === 'yarn' ? 'yarn install' : 'npm i'}`)
+    console.log(chalk.bold.white(`\n⏩ cd ${destination}`))
+    console.log(chalk.bold.white(`\n⏩ ${engine === 'yarn' ? 'yarn install' : 'npm install'}`))
 
     const ms = (new Date - start) / 1000;
     console.log(chalk.bold.greenBright(`\n🟢 All done! in ${ms}s 🟢`))
@@ -81,24 +86,6 @@ const initialization = async (option, projectName, engine) => {
       },
     },
     {
-      type: "select",
-      name: "engine",
-      message: "What egine of project? 📌",
-      validate: (value) =>
-        value >= 1 && value <= 2
-          ? true
-          : "Specify number in the range of 1 - 2",
-      suggest: (input, choices) => choices.filter((i) => i.value),
-      choices: [
-        "npm",
-        "yarn"
-      ],
-      fallback: {
-        title: "Using default",
-        value: 1,
-      },
-    },
-    {
       type: "text",
       name: "main",
       message: "What is the path to your express entry point? 🌈",
@@ -108,12 +95,23 @@ const initialization = async (option, projectName, engine) => {
         value: "src/index.js",
       },
     },
+    {
+      type: "text",
+      name: "engine",
+      message: "What egine (yarn or npm) use of project? 📌",
+      initial: 'npm',
+    }
   ];
 
   const answers = await prompt(questions, { onCancel });
 
-  if ((answers.option, answers.projectName, answers.main)) {
+  if ((answers.option, answers.projectName, answers.main, answers.engine)) {
     console.log(chalk.bold.white("Let's get started..."));
-    initialization(options[answers.option], answers.projectName, answers.engine);
+    initialization(
+      options[answers.option],
+      answers.projectName,
+      answers.main,
+      answers.engine
+    );
   }
 })();
