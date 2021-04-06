@@ -43,22 +43,22 @@ const downloadNodeModules = (config, destination, engine) => {
   if (engine === "yarn") {
     console.log(chalk.bold.white("\nInstalling dependencies..."));
     execSync(`yarn add ${config.dependencies}`, options);
-    console.log(chalk.bold.greenBright("Dependencies installation done...\n"));
+    console.log(chalk.bold.greenBright("✅ Dependencies installation done...\n"));
 
     console.log(chalk.bold.white("Installing dev dependencies..."));
     execSync(`yarn add -D ${config.devDependencies}`, options);
     console.log(
-      chalk.bold.greenBright("Dependencies installation complete...\n")
+      chalk.bold.greenBright("✅ Dependencies installation complete...\n")
     );
   } else {
     console.log(chalk.bold.white("\nInstalling dependencies..."));
     execSync(`npm i -s ${config.dependencies}`, options);
-    console.log(chalk.bold.greenBright("Dependencies installation done...\n"));
+    console.log(chalk.bold.greenBright("✅ Dependencies installation done...\n"));
 
     console.log(chalk.bold.white("Installing dev dependencies..."));
     execSync(`npm i -D ${config.devDependencies}`, options);
     console.log(
-      chalk.bold.greenBright("Dependencies installation complete...\n")
+      chalk.bold.greenBright("✅ Dependencies installation complete...\n")
     );
   }
 };

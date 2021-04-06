@@ -55,7 +55,7 @@ GNB (Generator NodeJS Boilerplates) foi criado para automatizar a tarefa de cria
 Para começar a usar você deve instalar o pacote com o comando
 **`npm install node-generator-boilerplate` ou `yarn add node-generator-boilerplate`**
 
-Logo após de instalar o pacote você utiliza: **`node-generator-boilerplate`**
+Logo após de instalar o pacote você utiliza o comando: **`generator-node`** ou **`create-node-app`** e pronto você já pode desfrutar.
 
 ## **📦 Rodando o projeto**
 

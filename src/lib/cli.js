@@ -43,13 +43,23 @@ const initialization = async (option, projectName, main, engine) => {
     }`;
 
     await generate(option, destination, main, engine);
-    console.log(chalk.bold.greenBright(`✅ Project setup complete! at ${destination}`));
-
-    console.log(chalk.bold.white(`\n⏩ cd ${destination}`))
-    console.log(chalk.bold.white(`\n⏩ ${engine === 'yarn' ? 'yarn install' : 'npm install'}`))
+    console.log(`${chalk.green('✅ Success!')} Created ${projectName} at ${destination}`)
+    console.log('Inside that directory, you can run several commands:')
+    console.log()
+    console.log(chalk.blueBright(`  ${engine === 'yarn' ? 'yarn dev' : 'npm run dev'}`))
+    console.log('    Starts the development server.')
+    console.log()
+    console.log(chalk.blueBright(`  ${engine === 'yarn' ? 'yarn build' : 'npm run build'}`))
+    console.log('    Builds the app for production.')
+    console.log(chalk.blueBright(`  ${engine === 'yarn' ? 'yarn start' : 'npm run start'}`))
+    console.log('    Runs the built app in production mode.')
+    console.log()
+    console.log('We suggest that you begin by typing:')
+    console.log(chalk.bold.white(`\n⏩ cd ${projectName}`))
+    console.log(chalk.bold.white(`\n⏩ ${engine === 'yarn' ? 'yarn dev' : 'npm run dev'}`))
 
     const ms = (new Date - start) / 1000;
-    console.log(chalk.bold.greenBright(`\n🟢 All done! in ${ms}s 🟢`))
+    console.log(chalk.bold.greenBright(`\n✅ Project setup complete! in ${ms}s 🟢`));
   } catch (error) {
     console.error(error);
   }
@@ -117,4 +127,6 @@ const initialization = async (option, projectName, main, engine) => {
       answers.engine
     );
   }
+
+  // update
 })();
