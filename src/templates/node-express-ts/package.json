@@ -1,10 +1,13 @@
 {
-  "name": "node-express-js",
+  "name": "node-express-ts",
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
-    "dev": "NODE_ENV=development nodemon .",
-    "start": "NODE_ENV=production node src/index.js"
+    "dev": "NODE_ENV=development ts-node-dev --inspect -r tsconfig-paths/register --respawn --transpile-only src/index.ts",
+    "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
+    "prod": "yarn build && yarn start",
+    "start": "NODE_ENV=production node dist/index.js",
+    "test": "jest"
   },
   "license": "MIT"
 }
