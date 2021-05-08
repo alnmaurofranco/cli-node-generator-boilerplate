@@ -1,6 +1,6 @@
 {
   "name": "node-generator-boilerplate",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A CLI help generate a new express server boilerplate with Javascript or Typescript.",
   "main": "bin/node-generator-boilerplate.js",
   "bin": {

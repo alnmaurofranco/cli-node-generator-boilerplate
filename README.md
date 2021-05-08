@@ -31,8 +31,10 @@ Algumas funcionalidades já presentes no projeto.
 - [] Templates
   - [x] Express + Javascript
   - [x] Express + Typescript
-  - [x] Koa + Javascript
+  - [] Koa + Javascript
   - [] Koa + Typescript
+  - [] NextJS + Typescript + Prettier + ESLint
+  - [] NextJS + Typescript + Tailwind
 - [] Padrões de Projeto
   - [] MVC
   - [] DDD
