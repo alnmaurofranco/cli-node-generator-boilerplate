@@ -25,6 +25,10 @@
     ]
   },
   "author": "alnmaurofranco",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alnmaurofranco/cli-node-generator-boilerplate.git"
+  },
   "keywords": [
     "nodejs",
     "javascript",
