@@ -15,4 +15,4 @@ npm run style:format || (
 
 echo '✅✅🎨 Styling of code check done [NEXT STEP] 🎨✅✅'
 
-npm run lint-staged
+npx lint-staged

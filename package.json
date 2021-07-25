@@ -18,9 +18,10 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "**/*.{js,jsx}": [
+    "src/lib/*.{js,jsx}": [
       "npm run lint:fix",
-      "npm run format:fix"
+      "npm run format:fix",
+      "git add -A ."
     ]
   },
   "author": "alnmaurofranco",
