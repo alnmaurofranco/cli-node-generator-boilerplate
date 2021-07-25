@@ -2,6 +2,7 @@
   "name": "express-template-js",
   "version": "1.9.0",
   "main": "index.js",
+  "author": "",
   "scripts": {
     "dev": "nodemon ."
   },

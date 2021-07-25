@@ -1,0 +1,17 @@
+{
+  "name": "node-koa-ts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "dev": "NODE_ENV=development ts-node-dev --respawn --transpile-only src/app.ts",
+    "build": "concurrently \"rimraf dist\" \"tsc\"",
+    "prod": "concurrently \"yarn build\" \"NODE_ENV=production node dist/app.js\" ",
+    "typeorm": "NODE_ENV=development ts-node-dev ./node_modules/typeorm/cli.js",
+    "style:lint": "eslint src/**/*.ts",
+    "style:format": "eslint src/**/*.ts && prettier --check .",
+    "style:all": "prettier --check .",
+    "styles:fix": "yarn eslint src/**/*.ts --fix && yarn prettier --write src/**/*.ts"
+  }
+}

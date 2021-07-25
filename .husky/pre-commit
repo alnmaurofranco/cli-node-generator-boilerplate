@@ -1,0 +1,18 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo '🎨🎨✨ Verify Styling of code ✨🎨🎨'
+
+npm run style:lint || (
+  echo '❌🎨❌ [FAILED] - ESLint formatting ❌🎨❌'
+  false;
+)
+
+npm run style:format || (
+  echo '❌🎨❌ [FAILED] - Prettier formatting ❌🎨❌'
+  false;
+)
+
+echo '✅✅🎨 Styling of code check done [NEXT STEP] 🎨✅✅'
+
+npm run lint-staged

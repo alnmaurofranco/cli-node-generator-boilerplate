@@ -1,0 +1,11 @@
+{
+  "name": "node-fastify-js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "",
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/server.js",
+    "start": "node --experimental-specifier-resolution=node src/server.js"
+  },
+  "license": "MIT"
+}

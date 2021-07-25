@@ -1,17 +1,17 @@
-const koa = require('koa')
+const koa = require('koa');
 
-const server = koa()
-
-server.use(function* (next) {
-  console.time('ms')
-  const { ms } = console.timeEnd('ms')
-  console.log('ms %s', ms)
-})
+const server = koa();
 
 server.use(function* (next) {
-  this.body = 'Welcome to NodeJS Generator Boilerplate'
-})
+  console.time('ms');
+  const { ms } = console.timeEnd('ms');
+  console.log('ms %s', ms);
+});
 
-const port = process.env.PORT || 3333
+server.use(function* (next) {
+  this.body = 'Welcome to NodeJS Generator Boilerplate';
+});
 
-server.listen(port)
+const port = process.env.PORT || 3333;
+
+server.listen(port);
