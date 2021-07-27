@@ -1,5 +1,6 @@
 node_modules
 dist
+*.json
 *.js
 src/**/*.spec.ts
 src/**/*.test.ts

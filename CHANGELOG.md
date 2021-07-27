@@ -1,5 +1,14 @@
 # CHANGE LOG
 
+## 2021-07-27
+
+- Update template
+  - ExpressJS + TypeScript
+  - Fix ESLint + Prettier
+  - Debugger
+  - Husky
+  - Lint-Staged
+
 ## 2021-07-25
 
 - Added 2 Templates

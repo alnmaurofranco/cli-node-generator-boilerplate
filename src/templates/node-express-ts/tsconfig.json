@@ -1,35 +1,36 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "target": "es2018",
     "module": "commonjs",
     "lib": [
       "ES6"
     ],
+    "strictPropertyInitialization": false,
     "allowJs": false,
     "outDir": "./dist",
     "rootDir": ".",
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
       "@models/*": [
-        "./src/models/*"
+        "models/*"
       ],
       "@views/*": [
-        "./src/views/*"
+        "views/*"
       ],
       "@services/*": [
-        "./src/services/*"
+        "services/*"
       ],
       "@controllers/*": [
-        "./src/controllers/*"
+        "controllers/*"
       ],
       "@config/*": [
-        "./src/config/*"
+        "config/*"
       ],
       "@repository/*": [
-        "./src/repository/*"
+        "repository/*"
       ],
       "@errors/*": [
-        "./src/errors/*"
+        "errors/*"
       ],
     },
     "removeComments": true,
@@ -42,6 +43,6 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": true
   }
 }

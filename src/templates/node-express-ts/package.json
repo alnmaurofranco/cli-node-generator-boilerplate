@@ -2,13 +2,26 @@
   "name": "node-express-ts",
   "version": "1.0.0",
   "main": "src/index.js",
-  "author": "",
+  "author": "alnmaurofranco",
   "scripts": {
     "dev": "NODE_ENV=development ts-node-dev --inspect -r tsconfig-paths/register --respawn --transpile-only src/index.ts",
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",
     "prod": "yarn build && yarn start",
     "start": "NODE_ENV=production node dist/index.js",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "style:lint": "eslint src/**/*.ts",
+    "style:format": "prettier --check .",
+    "style:all": "prettier --check . && eslint src/**/*.ts",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts}": [
+      "eslint . --fix",
+      "prettier --write .",
+      "yarn test --watchAll=false --bail --findRelatedTests",
+      "git add -A ."
+    ]
   },
   "license": "MIT"
 }

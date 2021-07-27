@@ -4,9 +4,11 @@ import path from 'path';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import cors from 'cors';
-import { errorHandler } from './errors/errorMiddleware';
-import { notFoundHandler } from './errors/notFound';
+
+import { errorHandler } from '@errors/errorMiddleware';
+import { notFoundHandler } from '@errors/notFound';
 import routes from './routes';
+
 const server = express();
 
 server.use(express.json());
@@ -24,6 +26,7 @@ server.use(
     origin: '*',
   })
 );
+
 if (process.env.NODE_ENV === 'production') {
   server.use(morgan('tiny'));
   server.use(helmet());

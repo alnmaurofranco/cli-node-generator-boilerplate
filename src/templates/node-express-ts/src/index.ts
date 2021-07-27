@@ -1,7 +1,7 @@
 import '@config/env';
-import server from './server';
 import { baseUrl, port } from '@config/index';
+import server from './server';
 
 server.listen(port, () =>
-  console.log(`Server started on ${baseUrl}:${port} ✨`)
+  console.log(`Server started go to ${baseUrl}:${port} ✨`)
 );

@@ -1,6 +1,4 @@
-const { NODE_PORT, NODE_URL } = process.env;
-
-const port = NODE_PORT;
-const baseUrl = NODE_URL;
+const port = process.env.PORT || 3333;
+const baseUrl = process.env.URL;
 
 export { port, baseUrl };
