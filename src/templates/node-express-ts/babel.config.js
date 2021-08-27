@@ -16,15 +16,12 @@ module.exports = {
       {
         alias: {
           '@config': './src/config',
-          '@repository': './src/repository',
-          '@services': './src/services',
-          '@models': './src/models',
-          '@controllers': './src/controllers',
           '@views': './src/views',
           '@errors': './src/errors',
         },
       },
     ],
+    '@babel/plugin-proposal-class-properties',
   ],
   ignore: ['**/*.spec.ts', '**/*.test.ts'],
 };

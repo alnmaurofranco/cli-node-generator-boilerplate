@@ -1,0 +1,7 @@
+{
+  "src/**/*.{js,ts}": [
+    "eslint . --fix",
+    "prettier --write .",
+    "yarn test --watchAll=false --bail --findRelatedTests"
+  ]
+}

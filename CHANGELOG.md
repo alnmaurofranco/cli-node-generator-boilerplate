@@ -1,5 +1,10 @@
 # CHANGE LOG
 
+## 2021-08-27
+- Update ExpressJS + TypeScript template
+  - Added Logger e Pino (choose)
+  - Added Lint-staged
+  - Resolved Jest with Tsconfig-Paths
 ## 2021-07-27
 
 - Update template

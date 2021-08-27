@@ -12,9 +12,9 @@ const options = [
     description:
       'Server with ExpressJS + TypeScript + ESLint + Prettier + Jest and Husky with Lint-Staged',
     dependencies:
-      'cookie-parser dotenv express express-async-errors helmet morgan ejs cors',
+      'express express-async-errors dotenv helmet morgan ejs cors pino dayjs pino-pretty winston',
     devDependencies:
-      'lint-staged husky prettier eslint-plugin-prettier eslint-config-prettier @types/express @types/cookie-parser @types/helmet @types/morgan @types/node @types/cors @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest eslint-config-airbnb-base@latest eslint-plugin-import@^2.22.1 eslint ts-node-dev tsconfig-paths typescript jest ts-jest @types/jest @babel/cli @babel/core @babel/node @babel/preset-env @babel/preset-typescript babel-plugin-module-resolver',
+      'lint-staged husky prettier eslint-plugin-prettier eslint-config-prettier @types/express @types/cookie-parser @types/helmet @types/morgan @types/node @types/cors @typescript-eslint/eslint-plugin@latest @types/pino @babel/plugin-proposal-class-properties @typescript-eslint/parser@latest eslint-config-airbnb-base@latest eslint-plugin-import@^2.22.1 eslint ts-node-dev tsconfig-paths typescript jest ts-jest @types/jest @babel/cli @babel/core @babel/node @babel/preset-env @babel/preset-typescript babel-plugin-module-resolver',
   },
   {
     template: 'node-koa-js',

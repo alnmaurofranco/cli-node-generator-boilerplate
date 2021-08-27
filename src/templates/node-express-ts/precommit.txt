@@ -1,0 +1,18 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo '🎨🎨🏗🔧🎨🎨 Verify Styling... 🎨🎨🏗🔧🎨🎨'
+
+yarn style:lint || (
+  echo '🚨❌❌🚨 WARNING!! ESLINT | LINTER CODES 🚨❌❌🚨'
+  false;
+)
+
+yarn style:format || (
+  echo '🎨❌❌🎨 WARNING!! PRETTIER | FORMAT CODES 🎨❌❌🎨'
+  false;
+)
+
+echo '✨🎉✅🎉✨ SUCCESSFULY!! COMMITING ==> NEXT STEP ✨🎉✅🎉✨'
+
+yarn lint-staged

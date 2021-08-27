@@ -1,48 +1,31 @@
 {
   "compilerOptions": {
-    "target": "es2018",
+    "target": "es2017",
     "module": "commonjs",
-    "lib": [
-      "ES6"
-    ],
+    "noEmit": true,
+    "strict": false,
     "strictPropertyInitialization": false,
     "allowJs": false,
-    "outDir": "./dist",
+    "removeComments": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "rootDir": ".",
     "baseUrl": "./src",
     "paths": {
-      "@models/*": [
-        "models/*"
-      ],
-      "@views/*": [
-        "views/*"
-      ],
-      "@services/*": [
-        "services/*"
-      ],
-      "@controllers/*": [
-        "controllers/*"
-      ],
-      "@config/*": [
-        "config/*"
-      ],
-      "@repository/*": [
-        "repository/*"
-      ],
-      "@errors/*": [
-        "errors/*"
-      ],
+      "@models/*": ["models/*"],
+      "@views/*": ["views/*"],
+      "@config/*": ["config/*"],
+      "@errors/*": ["errors/*"],
+      "@modules/*": ["modules/*"],
+      "@infra/*": ["infra/*"],
+      "@core/*": ["core/*"],
+      "@test/*": ["test/*"]
     },
-    "removeComments": true,
-    "typeRoots": [
-      "./node_modules/@types",
-      "./src/@types"
-    ],
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
-  }
+    "typeRoots": ["./node_modules/@types", "./src/@types"]
+  },
+  "include": ["src"]
 }

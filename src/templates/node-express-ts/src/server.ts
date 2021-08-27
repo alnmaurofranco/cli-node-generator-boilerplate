@@ -1,44 +1,11 @@
-import express from 'express';
-import 'express-async-errors';
-import path from 'path';
-import helmet from 'helmet';
-import morgan from 'morgan';
-import cors from 'cors';
+import '@config/env';
+import { baseUrl, PORT } from '@config/index';
+import { LoggerService } from 'logger/LoggerService';
+// import { log } from 'logger';
+import { app } from './app';
 
-import { errorHandler } from '@errors/errorMiddleware';
-import { notFoundHandler } from '@errors/notFound';
-import routes from './routes';
+const logger = new LoggerService(`app`);
 
-const server = express();
-
-server.use(express.json());
-server.use(express.urlencoded({ extended: true }));
-server.disable('x-powered-by');
-
-// Template
-server.set('view engine', 'ejs');
-server.use(express.static('public'));
-server.set('views', path.join(__dirname, 'views'));
-
-// Middlewares
-server.use(
-  cors({
-    origin: '*',
-  })
+app.listen(PORT, () =>
+  logger.info(`Server started go to ${baseUrl}:${PORT} ✨`)
 );
-
-if (process.env.NODE_ENV === 'production') {
-  server.use(morgan('tiny'));
-  server.use(helmet());
-} else {
-  server.use(morgan('dev'));
-}
-
-// Rotas
-server.get('/', (req, res) => res.render('index'));
-server.use('/api', routes);
-
-server.use(errorHandler);
-server.use(notFoundHandler);
-
-export default server;

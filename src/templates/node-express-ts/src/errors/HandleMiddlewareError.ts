@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
-import HttpException from './httpException';
+import { HttpException } from './HttpException';
 
-const errorHandler = (
+const HandleMiddlewareError = (
   error: HttpException,
   _request: Request,
   response: Response,
@@ -14,4 +14,4 @@ const errorHandler = (
   response.status(status).send(message);
 };
 
-export { errorHandler };
+export { HandleMiddlewareError };

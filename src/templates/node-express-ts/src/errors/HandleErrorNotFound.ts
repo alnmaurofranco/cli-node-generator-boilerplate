@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 
-const notFoundHandler = (
-  request: Request,
+const HandleErrorNotFound = (
+  _request: Request,
   response: Response,
   _next: NextFunction
 ) => {
@@ -10,4 +10,4 @@ const notFoundHandler = (
   response.status(404).send(message);
 };
 
-export { notFoundHandler };
+export { HandleErrorNotFound };
