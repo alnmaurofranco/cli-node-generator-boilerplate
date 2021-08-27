@@ -2,3 +2,4 @@ node_modules
 bin
 *.json
 src/templates
+*.md
