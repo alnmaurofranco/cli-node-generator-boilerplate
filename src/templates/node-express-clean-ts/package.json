@@ -1,0 +1,9 @@
+{
+  "name": "node-express-clean-ts",
+  "version": "1.0.0",
+  "main": "dist/server.js",
+  "license": "MIT",
+  "scripts": {
+    "dev:server": "tsnd --respawn --transpile-only --clear src/server.ts"
+  }
+}

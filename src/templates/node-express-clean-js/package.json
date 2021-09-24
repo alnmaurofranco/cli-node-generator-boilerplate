@@ -1,0 +1,9 @@
+{
+  "name": "node-express-clean-js",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "license": "MIT",
+  "scripts": {
+    "dev:server": "nodemon src/server.js"
+  }
+}

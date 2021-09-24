@@ -15,13 +15,5 @@
     "style:all": "prettier --check . && eslint src/**/*.ts",
     "prepare": "husky install"
   },
-  "lint-staged": {
-    "src/**/*.{js,ts}": [
-      "eslint . --fix",
-      "prettier --write .",
-      "yarn test --watchAll=false --bail --findRelatedTests",
-      "git add -A ."
-    ]
-  },
   "license": "MIT"
 }

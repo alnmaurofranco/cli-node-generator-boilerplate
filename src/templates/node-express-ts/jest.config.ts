@@ -20,4 +20,5 @@ export default {
     prefix: '<rootDir>/src/',
   }),
   preset: 'ts-jest',
+  verbose: true,
 };
