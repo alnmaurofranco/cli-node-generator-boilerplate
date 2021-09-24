@@ -49,6 +49,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 Algumas funcionalidades já presentes no projeto.
 
 - [] Templates
+  - [x] Express + JavaScript CLEAN!!
+  - [x] Express + TypeScript CLEAN!!
   - [x] Express + Javascript + ESLint + Prettier
   - [x] Express + Typescript + ESLint + Prettier
   - [x] Koa + Javascript
