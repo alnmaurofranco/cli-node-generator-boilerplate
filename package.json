@@ -9,7 +9,7 @@
     "create-node-app": "bin/node-generator-boilerplate.js"
   },
   "scripts": {
-    "dev": "node src/lib/cli.js",
+    "start": "node src/lib/cli.js",
     "style:lint": "eslint \"src/**/*.js\"",
     "style:format": "prettier --check .",
     "lint:fix": "npm run style:lint -- --fix",
