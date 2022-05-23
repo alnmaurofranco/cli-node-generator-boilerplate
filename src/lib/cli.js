@@ -140,12 +140,12 @@ const initialization = async (option, projectName, main, engine) => {
     {
       type: 'text',
       name: 'engine',
-      message: 'What egine (yarn or npm) use of project? 📌',
+      message: 'What egine use of project? 📌',
       initial: 'npm',
       validate: (engine) =>
-        /^yarn|npm*$/.test(engine)
+        /^yarn|npm|pnpm*$/.test(engine)
           ? true
-          : 'Invalid engine, please digit yarn or npm.',
+          : 'Invalid engine, please digit npm, yarn, pnpm.',
     },
   ];
 
