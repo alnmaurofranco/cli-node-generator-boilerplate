@@ -1,10 +1,19 @@
 # CHANGE LOG
 
+## 2022-05-22
+
+- TODO V2
+  - 🏗 Add TypeScript in project
+  - 🏗 Refactoring Structure
+  - 🏗 Refactoring/Update Templates
+  - 🏗 Refactoring README from EN-US and PT-BR
+
 ## 2021-08-27
 - Update ExpressJS + TypeScript template
   - Added Logger e Pino (choose)
   - Added Lint-staged
   - Resolved Jest with Tsconfig-Paths
+
 ## 2021-07-27
 
 - Update template

@@ -1,5 +1,0 @@
-node_modules
-dist
-*.js
-src/**/*.spec.ts
-src/**/*.test.ts

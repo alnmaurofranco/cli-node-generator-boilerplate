@@ -1,5 +1,6 @@
 node_modules
 bin
 *.json
-src/templates
+templates
 *.md
+dist
