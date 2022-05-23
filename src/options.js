@@ -50,6 +50,13 @@ const options = [
     devDependencies:
       'eslint nodemon prettier eslint-plugin-import eslint-plugin-prettier eslint-config-prettier eslint-config-airbnb-base @babel/core @babel/node @babel/preset-env',
   },
+  {
+    template: 'node-typescript-swc',
+    description: 'API with Express + TypeScript + SWC',
+    dependencies: 'express',
+    devDependencies:
+      'nodemon typescript @types/express @types/node @swc/cli @swc/core',
+  },
 ];
 
 module.exports = options;
