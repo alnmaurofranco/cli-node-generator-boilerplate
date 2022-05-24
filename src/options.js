@@ -51,11 +51,18 @@ const options = [
       'eslint nodemon prettier eslint-plugin-import eslint-plugin-prettier eslint-config-prettier eslint-config-airbnb-base @babel/core @babel/node @babel/preset-env',
   },
   {
-    template: 'node-typescript-swc',
+    template: 'node-express-ts-swc',
     description: 'API with Express + TypeScript + SWC',
     dependencies: 'express',
     devDependencies:
       'nodemon typescript @types/express @types/node @swc/cli @swc/core',
+  },
+  {
+    template: 'node-typescript-swc',
+    description: 'API TypeScript + SWC',
+    dependencies: '',
+    devDependencies:
+      'typescript ts-node ts-node-dev jest @types/jest @swc/cli @swc/core @types/node @swc/jest',
   },
 ];
 
