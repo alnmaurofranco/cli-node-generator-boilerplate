@@ -1,0 +1,16 @@
+{
+  "name": "node-express-ts-swc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "swc src -d dist",
+    "build-dev": "npm run build && NODE_ENV=development node --inspect dist/server.js",
+    "start:dev": "nodemon --ext ts --exec \"npm run build-dev\"",
+    "start:prod": "npm run build && NODE_ENV=production node dist/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
